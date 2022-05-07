@@ -15,7 +15,9 @@ class OrderSeeder extends Seeder
      */
     public function run()
     {
-        DB::table("orders")->insert([
+
+        
+			$data=collect([
             [
 	'pizzaname' => 'Popey',
 	'user_id' => 1,
@@ -25873,7 +25875,7 @@ class OrderSeeder extends Seeder
 	'created_at' => now(),
 	'updated_at' => now(),
 ],
-/*[
+[
 	'pizzaname' => 'Tonhalas',
 	'user_id' => 1,
 	'amount' => 1,
@@ -90627,8 +90629,8 @@ class OrderSeeder extends Seeder
 	'dispatched' => '2006.05.31 22:32:00', 
 	'created_at' => now(),
 	'updated_at' => now(),
-],*/
-/*[
+],
+[
 	'pizzaname' => 'Country',
 	'user_id' => 1,
 	'amount' => 1,
@@ -196206,7 +196208,11 @@ class OrderSeeder extends Seeder
 	'dispatched' => '2007.01.19 8:43:00', 
 	'created_at' => now(),
 	'updated_at' => now(),
-],*/
-        ]);
+],
+]);
+$chunks = $data->chunk(500);
+foreach($chunks as $chunk){
+	DB::table("orders")->insert($chunk->toArray());
+}
     }
 }
