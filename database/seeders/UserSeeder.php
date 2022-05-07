@@ -21,7 +21,7 @@ class UserSeeder extends Seeder
                 'name' => 'Teszt Admin',
                 'email' => 'admin@test.t',
                 'password' => '$2a$12$JdOcovhHenX22.Rmyd3PFu4NIdsw5DOQTsuGXmin091Zl1eyuOjIK', //teszt
-                'role' => 0,
+                'role' => 'admin',
                 'remember_token' => null,
                 'created_at' => now(),
                 'updated_at' => now(),
