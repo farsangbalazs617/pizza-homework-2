@@ -11,4 +11,11 @@ class Order extends Model
 
     public $timestamps = true;
 
+
+    public function pizzas()
+    {
+        return $this->belongsTo(Pizza::class, 'pizzaname');
+    }
+
+
 }

@@ -19,12 +19,11 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained('users');
             $table->integer('amount');
             $table->dateTime('taken');
-            $table->dateTime('dispatched');
+            $table->dateTime('dispatched')->nullable();
             $table->timestamps();
 
             $table->foreign('pizzaname')->references('pname')->on('pizzas');
         });
-
     }
 
     /**

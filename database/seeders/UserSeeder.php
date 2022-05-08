@@ -26,6 +26,15 @@ class UserSeeder extends Seeder
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
+            [
+                'name' => 'Teszt User',
+                'email' => 'user@test.t',
+                'password' => '$2a$12$JdOcovhHenX22.Rmyd3PFu4NIdsw5DOQTsuGXmin091Zl1eyuOjIK', //teszt
+                'role' => 'user',
+                'remember_token' => null,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
         ]);
     }
 }

@@ -8,4 +8,14 @@ use Illuminate\Database\Eloquent\Model;
 class Pizza extends Model
 {
     use HasFactory;
+
+    protected $primaryKey = 'pname';
+
+    protected $keyType = 'string';
+
+    public function categories()
+    {
+        return $this->belongsTo(Category::class, 'categoryname');
+    }
+
 }
